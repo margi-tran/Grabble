@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="margi_tran.grabble">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${googleMapApiKey}" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"
+            android:launchMode="singleTop" /> <!-- onCreate() only needs to be called once to set up the map -->
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".InventoryActivity"
+            android:label="Inventory"
+            android:parentActivityName=".MapsActivity" />
+        <activity
+            android:name=".CreateWordActivity"
+            android:label="Create Word"
+            android:parentActivityName=".MapsActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MapsActivity" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:label="Registration"
+            android:parentActivityName=".LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
+        </activity>
+        <activity
+            android:name=".RegistrationCompleteActivity"
+            android:label="Registration Complete" />
+        <activity
+            android:name=".ViewQuestsActivity"
+            android:label="Quests"
+            android:parentActivityName=".MapsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewStatisticsActivity"
+            android:label="Statistics"
+            android:parentActivityName=".MapsActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".ViewLeaderboardActivity"
+            android:label="Leaderboard"
+            android:parentActivityName=".MapsActivity"
+            android:screenOrientation="portrait" />
+
+
+    </application>
+
+</manifest>

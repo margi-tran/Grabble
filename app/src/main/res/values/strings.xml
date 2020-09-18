@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Grabble</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Sign Up</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="submit">Submit</string>
+    <string name="backToLogin">Go Back To Login</string>
+
+    <string name="create">Create</string>
+
+    <string name="action_inventory">Inventory</string>
+    <string name="action_create_word">Create Word</string>
+    <string name="action_leaderboard">Leaderboard</string>
+    <string name="action_statistics">Statistics</string>
+    <string name="action_quests">Quests</string>
+    <string name="action_quit">Quit</string>
+
+    <string name="no_internet">No network connection available.</string>
+    <string name="retry">Retry</string>
+    <string name="gps_disabled">GPS is disabled.</string>
+    <string name="enable">enable</string>
+
+    <string name="no_letters_collected">Total Number of Letters Collected</string>
+    <string name="no_words_created">Total Number of Words Created</string>
+    <string name="distance_travelled">Total Distance Travelled</string>
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The coordinator layout code from from content_main.xml via
+http://www.journaldev.com/10380/android-google-maps-in-action-example-tutorial -->
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="margi_tran.grabble.RegistrationCompleteActivity">
+
+    <!-- The following block of code is from
+    https://developer.android.com/training/appbar/setting-up.html -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="70dp"
+        tools:context="margi_tran.grabble.RegistrationCompleteActivity"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true">
+
+
+        <TextView
+            android:id="@+id/registerMsgTextView"
+            android:text="Thank you for registering!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/backToLoginBtn"
+            android:text="@string/backToLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goBackToLogin" />
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

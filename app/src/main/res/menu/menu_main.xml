@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+    android:id="@+id/action_inventory"
+    android:title="@string/action_inventory"
+    app:itemTextColor="@color/colorWhite"
+    app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_create_word"
+        android:title="@string/action_create_word"
+        app:itemTextColor="@color/colorWhite"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_quests"
+        android:title="@string/action_quests"
+        app:itemTextColor="@color/colorWhite"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_leaderboard"
+        android:title="@string/action_leaderboard"
+        app:itemTextColor="@color/colorWhite"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_statistics"
+        android:title="@string/action_statistics"
+        app:itemTextColor="@color/colorWhite"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_quit"
+        android:title="@string/action_quit"
+        app:itemTextColor="@color/colorWhite"
+        app:showAsAction="ifRoom"/>
+
+</menu>

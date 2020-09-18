@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The coordinator layout code from from content_main.xml via
+http://www.journaldev.com/10380/android-google-maps-in-action-example-tutorial -->
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="margi_tran.grabble.CreateWordActivity">
+
+    <!-- The following block of code is from
+    https://developer.android.com/training/appbar/setting-up.html -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="70dp"
+        tools:context="margi_tran.grabble.CreateWordActivity"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true">
+
+        <!-- The code for this GridLayout is adapted from PaulT's post from Stackoverflow:
+            http://stackoverflow.com/questions/10016343/gridlayout-not-gridview-how-to-stretch-all-
+            children-evenly -->
+        <android.support.v7.widget.GridLayout
+
+            android:id="@+id/sevenLetterGrid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="2dp"
+
+
+            app:alignmentMode="alignBounds"
+            app:columnCount="7"
+            app:rowOrderPreserved="false"
+            app:useDefaultMargins="true">
+
+            <TextView
+                android:id="@+id/letter1"
+                style="@style/individualSevenLetters"
+                android:background="@drawable/rectangle"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/letter2"
+                style="@style/individualSevenLetters"
+                android:background="@drawable/rectangle"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/letter3"
+                style="@style/individualSevenLetters"
+                android:background="@drawable/rectangle"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/letter4"
+                style="@style/individualSevenLetters"
+                android:background="@drawable/rectangle"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/letter5"
+                style="@style/individualSevenLetters"
+                android:background="@drawable/rectangle"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/letter6"
+                style="@style/individualSevenLetters"
+                android:background="@drawable/rectangle"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/letter7"
+                style="@style/individualSevenLetters"
+                android:background="@drawable/rectangle"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal"/>
+        </android.support.v7.widget.GridLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/createBtn"
+                android:text="@string/create"
+                android:layout_height="90dp"
+                android:layout_width="90dp"
+                android:textStyle="bold"
+                android:background="@drawable/circle"
+                android:onClick="processWord" />
+        </LinearLayout>
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <!-- The code for this GridLayout is adapted from PaulT's post from Stackoverflow:
+            http://stackoverflow.com/questions/10016343/gridlayout-not-gridview-how-to-stretch-all-
+            children-evenly -->
+            <android.support.v7.widget.GridLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:grid="http://schemas.android.com/apk/res-auto"
+
+                android:id="@+id/choice_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="4dp"
+
+                grid:alignmentMode="alignBounds"
+                grid:columnCount="5"
+                grid:rowOrderPreserved="false"
+                grid:useDefaultMargins="true">
+
+                <!-- Button and label for letter A -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_A" android:text="A" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_A" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter B -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_B" android:text="B" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_B" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter C -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_C" android:text="C" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_C" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter D -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_D" android:text="D" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_D" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/button_del"
+                    android:text="Del"
+                    app:layout_rowSpan="2"
+                    android:layout_width="0dp"
+                    android:layout_height="129dp"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="deleteLetter" />
+
+                <!-- Button and label for letter E -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_E" android:text="E" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_E" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter F -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_F" android:text="F" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_F" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter G -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_G" android:text="G" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_G" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter H -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_H" android:text="H" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_H" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter I -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_I" android:text="I" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_I" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter J -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_J" android:text="J" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_J" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter K -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_K" android:text="K" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_K" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter L -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_L" android:text="L" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_L" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter M -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_M" android:text="M" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_M" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter N -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_N" android:text="N" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_N" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter O -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_O" android:text="O" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_O" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter P -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_P" android:text="P" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_P" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter Q -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_Q" android:text="Q" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_Q" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter R -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_R" android:text="R" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_R" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter S -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_S" android:text="S" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_S" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter T -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_T" android:text="T" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_T" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter U -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_U" android:text="U" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_U" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter V -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_V" android:text="V" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_V" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter W -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_W" android:text="W" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_W" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter X -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_X" android:text="X" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_X" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter Y -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_Y" android:text="Y" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_Y" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+                <!-- Button and label for letter Z -->
+                <FrameLayout
+                    style="@style/letterButtonFrameLayout"
+                    grid:layout_columnWeight="1"
+                    grid:layout_gravity="fill_horizontal">
+                    <Button android:id="@+id/letter_Z" android:text="Z" style="@style/letterButton"/>
+                    <TextView android:id="@+id/label_qty_Z" android:text="x0" style="@style/quantityLabel"/>
+                </FrameLayout>
+
+            </android.support.v7.widget.GridLayout>
+        </ScrollView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

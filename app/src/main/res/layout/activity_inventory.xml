@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The coordinator layout code from from content_main.xml via
+http://www.journaldev.com/10380/android-google-maps-in-action-example-tutorial -->
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="margi_tran.grabble.InventoryActivity">
+
+    <!-- The following block of code is from
+    https://developer.android.com/training/appbar/setting-up.html -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="70dp"
+        tools:context="margi_tran.grabble.InventoryActivity"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true">
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <!-- The code for this GridLayout is adapted from PaulT's post from Stackoverflow:
+        http://stackoverflow.com/questions/10016343/gridlayout-not-gridview-how-to-stretch-all-
+        children-evenly -->
+        <android.support.v7.widget.GridLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:grid="http://schemas.android.com/apk/res-auto"
+
+            android:id="@+id/choice_grid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="4dp"
+
+            grid:alignmentMode="alignBounds"
+            grid:columnCount="4"
+            grid:rowOrderPreserved="false"
+            grid:useDefaultMargins="true">
+
+            <!-- Labels for letter A -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="A" style="@style/letterLabel" />
+                <TextView android:id="@+id/label_qty_A" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter B -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="B" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_B" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter C -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="C" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_C" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter D -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="D" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_D" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter E -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="E" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_E" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter F -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="F" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_F" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter G -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="G" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_G" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter H -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="H" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_H" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter I -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="I" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_I" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter J -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="J" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_J" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter K -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="K" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_K" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter L -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="L" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_L" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter M -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="M" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_M" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter N -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="N" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_N" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter O -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="O" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_O" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter P -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="P" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_P" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter Q -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="Q" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_Q" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter R -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="R" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_R" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter S -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="S" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_S" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter T -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="T" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_T" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter U -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="U" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_U" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter V -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="V" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_V" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter W -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="W" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_W" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter X -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="X" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_X" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter Y -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="Y" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_Y" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+            <!-- Labels for letter Z -->
+            <FrameLayout
+                style="@style/letterFrameLayout"
+                grid:layout_columnWeight="1"
+                grid:layout_gravity="fill_horizontal">
+                <TextView android:text="Z" style="@style/letterLabel"/>
+                <TextView android:id="@+id/label_qty_Z" android:text="x0" style="@style/quantityLabel"/>
+            </FrameLayout>
+
+        </android.support.v7.widget.GridLayout>
+        </ScrollView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
